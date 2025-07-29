@@ -1,10 +1,15 @@
-import { useState } from "react";
 import "./App.css";
-import data from "./countries.json";
+import CountryDetails from "./components/CountryDetails";
+import HomePage from "./components/HomePage";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [countries, setCountrie] = useState(data);
-  return <div className="App"></div>;
+  return <div className="App">
+    <Routes>
+      <Route path="/" element= {<HomePage/>} />
+      <Route path="/:alpha3Code" element={<CountryDetails /> } />
+    </Routes>
+  </div>;
 }
 
 export default App;
